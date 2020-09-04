@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Developers Hub</title>
+</head>
+<body>
+
+    <div class="container text-center mt-4">
+        <h1 class="text-capitalize subtitle reg-title">registration</h1>
+
+        <div class="row text-center justify-content-center">
+            <div class="col-6">
+                <form id="form" action="https://localhost:44373/api/persons" method="post"  enctype='application/json'>
+                    <div class="form-group row">
+                      <label for="firstName" class="col-sm-2 col-form-label">First&nbsp;name</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="firstName" name="firstName">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastName" class="col-sm-2 col-form-label">Last&nbsp;name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="lastName" name="lastName">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="address" class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="address" name="address">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="phoneNumber" class="col-sm-2 col-form-label">Phone&nbsp;No.</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" id="phoneNo"  name="phoneNo">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-5">
+                          <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Confirm</label>
+                        <div class="col-sm-5">
+                          <input type="password" class="form-control" id="inputPassword">
+                        </div>
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me in</label>
+                      </div>
+                      <button type="submit" class="btn btn-outline-primary btn-color" id="submit" name="submit" value="Submit">Register</button>
+                      <br>
+                      <br>
+                      <a href="index.html">Sign in</a>
+                  </form>
+            </div>
+        </div>
+    </div>
+    <!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+
+<script>
+    var url = 
+    /* attach a submit handler to the form */
+$("#form").submit(function(event) {
+
+/* stop form from submitting normally */
+event.preventDefault();
+
+/* get the action attribute from the <form action=""> element */
+var $form = $(this),
+  url = $form.attr('action');
+
+/* Send the data using post with element id name and name2*/
+var posting = $.post(url, {
+    firstName: $('#firstName').val(),
+    lastName: $('#lastName').val(),
+    address: $('#address').val(),
+    phoneNo: $('#phoneNo').val()
+});
+
+/* Alerts the results */
+posting.done(function(data) {
+  $('#result').text('success');
+});
+posting.fail(function() {
+  $('#result').text('failed');
+});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(245, 245, 240);
+}
+
+.dev-title{
+    font-family: 'Lobster', cursive;
+    color: steelblue;
+}
+
+.subtitle{
+    color: rgb(97, 97, 240);
+    font-size: 2.5rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.reg-title{
+    color: rgb(120, 40, 120);
+    font-size: 4rem;
+}
+
+.btn-color{
+    color: rgb(120, 40, 120);
+}
