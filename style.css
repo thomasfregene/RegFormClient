@@ -21,3 +21,20 @@ body{
 .btn-color{
     color: rgb(120, 40, 120);
 }
+
+.dev-home {
+    font-size: 3.5rem;
+    color: rgb(120, 40, 120);
+}
+
+.logout-home {
+    color: rgb(120, 40, 120);
+}
+
+.table-head {
+    color: rgb(120, 40, 120)!important;
+}
+
+.table-text {
+    color: rgb(120, 40, 120);
+}

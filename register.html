@@ -14,7 +14,7 @@
         <h1 class="text-capitalize subtitle reg-title">registration</h1>
 
         <div class="row text-center justify-content-center">
-            <div class="col-md-6">
+            <div class="col-xm-6 col-md-8 col-lg-6">
                 <form id="form" action="https://localhost:44373/api/persons" method="post"  enctype='application/json'>
                     <div class="form-group row">
                       <label for="firstName" class="col-sm-2 col-form-label">First&nbsp;name</label>
@@ -70,34 +70,31 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
 
-<script>
-    var url = 
-    /* attach a submit handler to the form */
-$("#form").submit(function(event) {
+<!-- <script>
+  const root = "https://localhost:44373/api/persons";
+  let uri = root + 'post';
 
-/* stop form from submitting normally */
-event.preventDefault();
+  let formData = new FormData();
+  
 
-/* get the action attribute from the <form action=""> element */
-var $form = $(this),
-  url = $form.attr('action');
+  let options = {
+    method: 'POST',
+    mode: 'cors',
+    body: formData
+  }
 
-/* Send the data using post with element id name and name2*/
-var posting = $.post(url, {
-    firstName: $('#firstName').val(),
-    lastName: $('#lastName').val(),
-    address: $('#address').val(),
-    phoneNo: $('#phoneNo').val()
-});
+  let req = new Request(uri, options);
 
-/* Alerts the results */
-posting.done(function(data) {
-  $('#result').text('success');
-});
-posting.fail(function() {
-  $('#result').text('failed');
-});
-});
-</script>
+  fetch(req)
+  .then((response)=>{
+    if(response.ok){
+      return response.json();
+    }else{
+      throw new Error('Bad HTTP!')
+    }
+  }).then((j)=>{
+    console.log(j)
+  })
+</script> -->
 </body>
 </html>
